@@ -36,28 +36,28 @@ const customer = mongoose.model("Customer", customerSchema);
 // addOrders();
 
 
-const addCustomer = async() => {
-    let cust1 = new customer({
-        name: "Rami Malik"
-    }) 
+// const addCustomer = async() => {
+//     let cust1 = new customer({
+//         name: "Rami Malik"
+//     }) 
 
-    let order1 = await order.findOne({item: "Samosa"});
-    let order2 = await order.findOne({item: "Juice"});
+//     let order1 = await order.findOne({item: "Samosa"});
+//     let order2 = await order.findOne({item: "Juice"});
 
-    cust1.orders.push(order1);
-    cust1.orders.push(order2);
+//     cust1.orders.push(order1);
+//     cust1.orders.push(order2);
 
-    console.log(cust1);
+//     console.log(cust1);
 
-    let result = await cust1.save();
-    console.log(cust1);
-}
+//     let result = await cust1.save();
+//     console.log(cust1);
+// }
 
-addCustomer();
+// addCustomer();
 
 let custFind = async () => {
-    let result = await customer.find({});
-    console.log(result)
+    let result = await customer.find({})
+    console.log(result[0])
 };
 
 custFind();
